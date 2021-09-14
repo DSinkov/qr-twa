@@ -3,6 +3,7 @@ import type { AWS } from "@serverless/typescript";
 import getLinkPreview from "@functions/getLinkPreview";
 
 const serverlessConfiguration: AWS = {
+  useDotenv: true,
   service: "link-preview-service",
   frameworkVersion: "2",
   custom: {

@@ -3,7 +3,7 @@ import styles from './ParsedContent.module.scss';
 import { EMAIL_REGEX, URL_REGEX } from '../../../constants/regex';
 import LinkPreview from '../LinkPreview/LinkPreview';
 import { Preview } from '../../../constants/models';
-import { noop } from '../../../utils/utils';
+import { ENDPOINTS } from '../../../constants/endpoints';
 
 interface Props {
   rawValue: string;
@@ -18,8 +18,7 @@ const ParsedContent: React.FC<Props> = ({ rawValue }) => {
     const getPreview = async () => {
       let preview = null;
       try {
-        //TODO: Add link preview fetching
-        await noop();
+        preview = await fetch(getPreviewEndpoint(rawValue)).then((res) => res.json());
       } catch (e) {}
       setLinkPreview(preview);
     };
@@ -51,3 +50,5 @@ const ParsedContent: React.FC<Props> = ({ rawValue }) => {
 };
 
 export default ParsedContent;
+
+const getPreviewEndpoint = (url: string): string => `${ENDPOINTS.getLinkPreview}?${new URLSearchParams({ url })}`;

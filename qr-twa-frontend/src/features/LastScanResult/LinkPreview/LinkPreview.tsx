@@ -7,11 +7,47 @@ interface Props {
 }
 
 const LinkPreview: React.FC<Props> = ({ data }) => {
-  if (!data || data.url.slice(0, 8) !== 'https://') {
-    return null;
-  }
+  if (!data) return null;
 
-  return <div className={styles.container}>{JSON.stringify(data)}</div>;
+  switch (data.mediaType) {
+    case 'image': {
+      return (
+        <a href={data.url} target={'_blank'} rel={'noreferrer noopener'} className={styles.image_container}>
+          <img src={data.url} alt={data.url} />
+        </a>
+      );
+    }
+    case 'audio': {
+      return (
+        <audio controls>
+          <source src={data.url} type={data.contentType} />
+        </audio>
+      );
+    }
+    case 'video': {
+      return (
+        <video controls>
+          <source src={data.url} type={data.contentType} />
+        </video>
+      );
+    }
+    default: {
+      return (
+        <a href={data.url} target={'_blank'} rel={'noreferrer noopener'} className={styles.container}>
+          <div className={styles.title}>
+            {data.favicons.length ? <img className={styles.favicon} src={data.favicons[0]} alt='link favicon' /> : null}
+            <span>{data.title}</span>
+          </div>
+          <div className={styles.description}>
+            {data.images?.length ? (
+              <img className={styles.site_img} src={data.images[0]} alt='site description' />
+            ) : null}
+            <span>{data.description}</span>
+          </div>
+        </a>
+      );
+    }
+  }
 };
 
 export default LinkPreview;
