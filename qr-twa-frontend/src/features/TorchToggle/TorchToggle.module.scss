@@ -1,6 +1,6 @@
 .container {
   position: fixed;
-  bottom: 20vh;
+  bottom: 15vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -9,6 +9,8 @@
   background: none;
   color: var(--colort-text-on-dark);
   padding: 0.5rem;
+  box-shadow: none;
+  outline: none;
   &:hover,
   &:active {
     background: none;

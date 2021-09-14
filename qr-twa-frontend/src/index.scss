@@ -33,6 +33,7 @@ code {
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: var(--viewport-height);
 }
 button {
   font-size: var(--body-font-size);

@@ -3,7 +3,6 @@ import jsQR from 'jsqr';
 import { useAppDispatch } from '../../appState/AppContext';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
-import { useTranslation } from 'react-i18next';
 
 type UseQRScanner = () => {
   canvasElRef: MutableRefObject<HTMLCanvasElement | null>;
@@ -12,7 +11,6 @@ type UseQRScanner = () => {
 };
 
 export const useQRScanner: UseQRScanner = () => {
-  const { t } = useTranslation();
   const appDispatch = useAppDispatch();
   const history = useHistory();
   const videoElRef = React.useRef<HTMLVideoElement>(document.createElement('video'));
@@ -69,7 +67,7 @@ export const useQRScanner: UseQRScanner = () => {
         requestAnimationFrame(startScanning);
         setTrack(stream.getVideoTracks()[0]);
       } catch (e) {
-        setError(t('errors.permissionDenied'));
+        setError('errors.permissionDenied');
       }
     };
 

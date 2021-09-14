@@ -11,7 +11,7 @@ const Scanner: React.FC = () => {
 
   return (
     <Page>
-      {error ? <div className={styles.message}>{error}</div> : null}
+      {error ? <div className={styles.message}>{t(error)}</div> : null}
       {!track && !error ? <div className={styles.message}>{t('scanner.cameraRequest')}</div> : null}
       <div className={styles.canvas}>
         <canvas ref={canvasElRef} />

@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Scan QR code
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run default CRA scripts (`npm start` , `npm test`, `npm run build`).
 
-### `npm start`
+### Generating React Function Component
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For generating React components you can use `genRC.js` script from the root dir.
+It will create directory which contains:
+- `.tsx` file with basic FC component template
+- `.spec.tsx` file with basic test file template
+- (optional) empty `.module.scss` file, wouldn't create by default
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+For created dir would be called `git add` command.
 
-### `npm test`
+Default target directory is `./src/features/`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Default script call is `node genRC.js <ComponentName>`
+or you can call it form `package.json` with npm `npm run gc -- <ComponentName>`.
 
-### `npm run build`
+#### Receiving params:
+- -s - Create empty `.module.scss` and add import of this file into component
+- -t - Include `useTranslation` hook into component
+- -p - Include empty interface for component props
+- -u - Create component in `./src/utils/components/` instead of `./src/features/`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Base templates of created files are located in `genRC.js`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Deploy web app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Project use `surge.sh` (free plan) for deploy and host frontend. 
+For build and deploy use `npm run deploy` command. 
+It will additionally copy `index.html` as `200.html` inside `build` folder. 
+It is needed for [correct routing by surge.sh service](https://surge.sh/help/adding-a-200-page-for-client-side-routing).
