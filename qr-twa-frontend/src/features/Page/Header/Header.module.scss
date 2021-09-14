@@ -1,0 +1,13 @@
+.container {
+  padding: 0.5rem 1rem;
+  background: var(--color-800);
+  color: var(--colort-text-on-dark);
+  position: sticky;
+  top: 0;
+}
+.title {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}

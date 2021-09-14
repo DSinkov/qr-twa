@@ -1,0 +1,20 @@
+.container {
+  position: fixed;
+  bottom: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.button {
+  background: none;
+  color: var(--colort-text-on-dark);
+  padding: 0.5rem;
+  &:hover,
+  &:active {
+    background: none;
+  }
+  svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}

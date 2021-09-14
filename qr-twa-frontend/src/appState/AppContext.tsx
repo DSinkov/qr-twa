@@ -5,7 +5,9 @@ import { AppAction, AppDispatch, AppProviderProps, AppState } from './models';
 const AppStateContext = React.createContext<AppState | undefined>(undefined);
 const AppDispatchContext = React.createContext<AppDispatch | undefined>(undefined);
 
-const DEFAULT_INITIAL_STATE: AppState = {};
+const DEFAULT_INITIAL_STATE: AppState = {
+  lastScanResult: null,
+};
 
 function AppProvider({ children, initialState }: AppProviderProps) {
   const [state, dispatch] = React.useReducer<(state: AppState, action: AppAction) => AppState>(
