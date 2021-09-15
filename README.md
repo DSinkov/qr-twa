@@ -7,7 +7,7 @@ So, in the frontend directory (`./frontend`), you can run default CRA scripts (`
 
 ### Generating React Function Component
 
-For generating React components you can use `genRC.js` script from the root dir.
+For generating React components you can use `genRC.js` script from the frontend dir.
 It will create directory which contains:
 - `.tsx` file with basic FC component template
 - `.spec.tsx` file with basic test file template
