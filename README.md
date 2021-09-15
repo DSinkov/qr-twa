@@ -1,10 +1,9 @@
-# Scan QR code
+# Scan QR Code
+This repository contains frontend `React.js` app and code for `AWS Lambda`. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run default CRA scripts (`npm start` , `npm test`, `npm run build`).
+## Available Scripts for frontend
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+So, in the frontend directory (`./frontend`), you can run default CRA scripts (`npm start` , `npm test`, `npm run build`).
 
 ### Generating React Function Component
 
@@ -31,7 +30,12 @@ Base templates of created files are located in `genRC.js`.
 
 ### Deploy web app
 
-Project use `surge.sh` (free plan) for deploy and host frontend. 
-For build and deploy use `npm run deploy` command. 
-It will additionally copy `index.html` as `200.html` inside `build` folder. 
+Project use `surge.sh` (free plan) for deploy and host frontend.
+For build and deploy use `npm run deploy` command.
+It will additionally copy `index.html` as `200.html` inside `build` folder.
 It is needed for [correct routing by surge.sh service](https://surge.sh/help/adding-a-200-page-for-client-side-routing).
+
+## AWS Lambdas
+
+Lambdas service is based on `serverless` template `aws-nodejs-typescript` and has own [README.md](./aws-lambda/link-preview-service/README.md).
+At the moment it has the only lambda function.

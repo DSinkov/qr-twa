@@ -37,7 +37,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "copy-index": "node scripts/copyIndexAs200.js",
-    "deploy": "npm run build && npm run copy-index && surge --project ./build --domain scan-qr-code.surge.sh"
+    "deploy": "npm run build && npm run copy-index && surge --project ./build --domain https://scan-qr-code.surge.sh"
   },
   "eslintConfig": {
     "extends": [
