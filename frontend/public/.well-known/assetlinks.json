@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "sh.surge.scan_qr_code.twa",
+      "sha256_cert_fingerprints": [
+        "CE:2E:13:C7:4C:3A:B6:59:EA:65:26:1F:5E:31:27:E4:D2:44:28:66:BC:D1:E4:A3:DC:77:87:8E:F8:B8:BE:50"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "sh.surge.scan_qr_code.twa",
+      "sha256_cert_fingerprints": [
+        "7E:C6:9D:B0:9A:98:BC:27:C8:DD:DF:4F:F7:77:40:E5:B3:5E:36:BA:76:B0:FA:0F:47:F5:3F:F3:69:4B:F7:9D"
+      ]
+    }
+  }
+]

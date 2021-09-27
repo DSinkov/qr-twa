@@ -14,8 +14,15 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://scan-qr-code.surge.sh",
   "display": "standalone",
   "theme_color": "#626262",
-  "background_color": "#767676"
+  "background_color": "#222222",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "sh.surge.scan_qr_code.twa"
+    }
+  ]
 }

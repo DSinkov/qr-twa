@@ -25,8 +25,8 @@
     "@types/node": "^12.20.24",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
-    "@types/w3c-image-capture": "^1.0.5",
     "@types/react-router-dom": "^5.1.8",
+    "@types/w3c-image-capture": "^1.0.5",
     "minimist": "^1.2.5",
     "prettier": "^2.4.0",
     "simple-git": "^2.41.2"
