@@ -30,7 +30,7 @@ const LastScanResult: React.FC = () => {
         <ParsedContent rawValue={lastScanResult.value} />
         <div className={styles.actions}>
           <button className={styles.action_btn} onClick={handleCopy}>
-            {isCopied ? <Done /> : t('actions.copy')}
+            {isCopied ? <Done /> : <span>{t('actions.copy')}</span>}
           </button>
           <button className={styles.action_btn} onClick={() => appDispatch({ type: 'RESET_SCAN_RESULT' })}>
             {t('actions.next')}

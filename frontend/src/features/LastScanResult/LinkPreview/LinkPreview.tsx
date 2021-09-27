@@ -13,20 +13,20 @@ const LinkPreview: React.FC<Props> = ({ data }) => {
     case 'image': {
       return (
         <a href={data.url} target={'_blank'} rel={'noreferrer noopener'} className={styles.image_container}>
-          <img src={data.url} alt={data.url} />
+          <img src={data.url} alt={data.url} data-testid={'image-preview'} />
         </a>
       );
     }
     case 'audio': {
       return (
-        <audio controls>
+        <audio controls data-testid={'audio player'}>
           <source src={data.url} type={data.contentType} />
         </audio>
       );
     }
     case 'video': {
       return (
-        <video controls>
+        <video controls data-testid={'video player'}>
           <source src={data.url} type={data.contentType} />
         </video>
       );
