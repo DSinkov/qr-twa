@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderWrapped } from 'testUtils';
 import ParsedContent from './ParsedContent';
-import { screen } from '@testing-library/react';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 
 test('renders ParsedContent', () => {
   renderWrapped(<ParsedContent rawValue={''} />);
@@ -24,18 +24,22 @@ test('renders ParsedContent as email', () => {
 
 test('renders ParsedContent with preview', async () => {
   renderWrapped(<ParsedContent rawValue={'https://surge.sh'} />);
+  const spinner = await screen.findByTestId('spinner');
+  expect(spinner).toBeInTheDocument();
 
   const img = await screen.findByTestId('image-preview');
   expect(img).toBeInTheDocument();
+  expect(spinner).not.toBeInTheDocument();
 });
 
 test('renders ParsedContent as link', async () => {
   renderWrapped(<ParsedContent rawValue={'https://surge.sh'} />);
 
   const link = screen.getByRole('link');
+  const spinner = await screen.findByTestId('spinner');
+
   expect(link.getAttribute('href')).toBe('https://surge.sh');
   expect(link.textContent).toBe('https://surge.sh');
 
-  const img = await screen.findByTestId('image-preview');
-  expect(img).toBeInTheDocument();
+  await waitForElementToBeRemoved(spinner);
 });

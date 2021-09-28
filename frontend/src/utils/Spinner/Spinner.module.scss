@@ -1,0 +1,34 @@
+.container {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  animation: container-animation 1.4s ease-in-out infinite;
+}
+
+.spinner {
+  animation: spinner-animation 1.4s ease-in-out infinite;
+}
+
+@keyframes spinner-animation {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
+
+@keyframes container-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
