@@ -82,8 +82,8 @@ export const useQRScanner: UseQRScanner = () => {
 };
 
 const updateCanvasSize = (canvasEl: HTMLCanvasElement, videoEl: HTMLVideoElement) => {
-  const width = Math.min(window.visualViewport.width, videoEl.videoWidth);
-  const height = Math.round((videoEl.videoHeight / videoEl.videoWidth) * canvasEl.width);
+  const height = window.visualViewport.height - 50;
+  const width = Math.round((videoEl.videoWidth / videoEl.videoHeight) * height);
   canvasEl.width !== width && (canvasEl.width = width);
   canvasEl.height !== height && (canvasEl.height = height);
 };

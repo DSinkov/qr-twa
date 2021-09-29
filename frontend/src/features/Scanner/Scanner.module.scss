@@ -4,6 +4,10 @@
 .canvas {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: calc(var(--viewport-height) - 50px);
+  overflow: hidden;
+  position: relative;
 }
 .message {
   padding: 10vh 5vw;
