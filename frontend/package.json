@@ -37,6 +37,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "gc": "node genRC.js",
     "copy-index": "node scripts/copyIndexAs200.js",
     "deploy": "npm run build && npm run copy-index && surge --project ./build --domain https://scan-qr-code.surge.sh"
   },
